@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.82% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/17</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/15</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,65 +93,68 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
-import { CreateReviewDto } from './dto/create-review.dto';
-import { ReviewService } from './review.service';
-import { REVIEW_NOT_FOUND } from './review.constants';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';</span>
+<span class="cstat-no" title="statement not covered" >import { CreateReviewDto } from './dto/create-review.dto';</span>
+<span class="cstat-no" title="statement not covered" >import { ReviewService } from './review.service';</span>
+<span class="cstat-no" title="statement not covered" >import { REVIEW_NOT_FOUND } from './review.constants';</span>
+<span class="cstat-no" title="statement not covered" >import { JwtAuthGuard } from '../auth/guards/jwt.guard';</span>
+<span class="cstat-no" title="statement not covered" >import { UserEmail } from '../auth/decorators/user-email.decorator';</span>
 &nbsp;
 @Controller('review')
-export class ReviewController {
+export <span class="cstat-no" title="statement not covered" >class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >ReviewController </span>{</span></span>
 <span class="fstat-no" title="function not covered" >	constructor(private readonly <span class="cstat-no" title="statement not covered" >r</span>eviewService: R</span>eviewService) {}
 &nbsp;
+&nbsp;
+	@UsePipes(new ValidationPipe())
 	@Post('create')
-<span class="fstat-no" title="function not covered" >	async </span>create(@Body() dto: CreateReviewDto) {
+<span class="fstat-no" title="function not covered" >	async <span class="cstat-no" title="statement not covered" ></span>create(@Body() dto: CreateReviewDto) {</span>
 <span class="cstat-no" title="statement not covered" >		return this.reviewService.create(dto)</span>
 	}
-&nbsp;
+	@UseGuards(JwtAuthGuard)
 	@Delete(':id')
-<span class="fstat-no" title="function not covered" >	async </span>delete(@Param('id') id: string) {
+<span class="fstat-no" title="function not covered" >	async <span class="cstat-no" title="statement not covered" ></span>delete(@Param('id') id: string) {</span>
 		const deleteDoc = <span class="cstat-no" title="statement not covered" >await this.reviewService.delete(id)</span>
-<span class="cstat-no" title="statement not covered" >		if (!deleteDoc) {</span>
+<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!deleteDoc) {</span>
 <span class="cstat-no" title="statement not covered" >			throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND)</span>
-		} else {
-<span class="cstat-no" title="statement not covered" >			return deleteDoc</span>
 		}
 	}
 &nbsp;
 	@Get('byProduct/:productId')
-<span class="fstat-no" title="function not covered" >	async </span>getByProductId(@Param('productId') productId: string) {
+<span class="fstat-no" title="function not covered" >	async <span class="cstat-no" title="statement not covered" ></span>getByProductId(@Param('productId') productId: string, @UserEmail() email: string) {</span>
 <span class="cstat-no" title="statement not covered" >		return this.reviewService.findByProductId(productId)</span>
 	}
-&nbsp;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -160,7 +163,7 @@ export class ReviewController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-19T21:02:48.192Z
+                at 2024-04-21T18:39:42.884Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

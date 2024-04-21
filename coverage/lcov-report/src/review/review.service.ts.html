@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/14</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.66% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/12</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
@@ -92,18 +92,18 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,8 +112,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,7 +130,7 @@ import { InjectModel } from '@m8a/nestjs-typegoose';
 &nbsp;
 @Injectable()
 export class ReviewService {
-<span class="fstat-no" title="function not covered" >	constructor(@I</span>njectModel(ReviewModel) private readonly <span class="cstat-no" title="statement not covered" >reviewModel: ModelType&lt;ReviewModel&gt;)</span> { }
+	constructor(@InjectModel(ReviewModel) private readonly reviewModel: ModelType&lt;ReviewModel&gt;) { }
 &nbsp;
 <span class="fstat-no" title="function not covered" >	async </span>create(dto: CreateReviewDto): Promise&lt;DocumentType&lt;ReviewModel&gt;&gt; {
 <span class="cstat-no" title="statement not covered" >		return this.reviewModel.create(dto)</span>
@@ -140,9 +140,9 @@ export class ReviewService {
 <span class="cstat-no" title="statement not covered" >		return this.reviewModel.findByIdAndDelete(id).exec()</span>
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	async </span>findByProductId(productId: string): Promise&lt;DocumentType&lt;ReviewModel&gt;[]&gt; {
-		const objId = <span class="cstat-no" title="statement not covered" >new Types.ObjectId(productId)</span>
-<span class="cstat-no" title="statement not covered" >		return this.reviewModel.find({ productId: objId }).exec()</span>
+	async findByProductId(productId: string): Promise&lt;DocumentType&lt;ReviewModel&gt;[]&gt; {
+		const objId = new Types.ObjectId(productId)
+		return this.reviewModel.find({ productId: objId }).exec()
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	async </span>deleteByProductId(productId: string) {
@@ -150,14 +150,14 @@ export class ReviewService {
 <span class="cstat-no" title="statement not covered" >		return this.reviewModel.deleteMany({ productId: objId }).exec()</span>
 	}
 }
-&nbsp;</pre></td></tr></table></pre>
+ </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-19T21:02:48.192Z
+                at 2024-04-21T18:39:42.884Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
