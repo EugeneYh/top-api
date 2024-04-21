@@ -2,6 +2,9 @@
 /dist
 /node_modules
 /build
+/mongo-data
+/mongo-data/diagnostic.data/metrics.interim
+mongo-data/WiredTiger.turtle
 
 # Logs
 logs
@@ -45,7 +48,6 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
-mongo-data/
 
 # Runtime data
 pids
