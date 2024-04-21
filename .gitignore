@@ -45,7 +45,7 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
-/mongo-data
+mongo-data/
 
 # Runtime data
 pids
