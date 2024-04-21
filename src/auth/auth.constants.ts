@@ -1,0 +1,1 @@
+export const USER_ALREADY_EXISTS: string = "User with this login already exists"
