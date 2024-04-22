@@ -11,21 +11,21 @@ export class ProductService {
 	constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>) { }
 
 	async create(dto: CreateProductDto) {
-		this.productModel.create(dto)
+		return this.productModel.create(dto)
 	}
 
 	async findById(id: string) {
 		return this.productModel.findById(id).exec()
 	}
 
-	async deleteById(id: string) { 
+	async deleteById(id: string) {
 		return this.productModel.findByIdAndDelete(id).exec()
 	}
 
 	async updateById(id: string, dto: CreateProductDto) {
-        return this.productModel.findByIdAndUpdate(id, dto, { new: true }).exec()
+		return this.productModel.findByIdAndUpdate(id, dto, { new: true }).exec()
 	}
-	
+
 	async findWithReview(dto: FindProductDto) {
 		return await this.productModel.aggregate([
 			{
@@ -52,7 +52,7 @@ export class ProductService {
 			{
 				$addFields: {
 					reviewCount: { $size: '$reviews' },
-					reviewAvg: { $avg: '$review.rating' }
+					reviewAvg: { $avg: '$reviews.rating' }
 				}
 			}
 		]).exec() as (ProductModel & { review: ReviewModel[], reviewCount: number, reviewAvg: number })[]

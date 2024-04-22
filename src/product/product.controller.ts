@@ -7,17 +7,18 @@ import { PRODUCT_NOT_FOUND_ERROR } from './product.constants';
 
 @Controller('product')
 export class ProductController {
-	constructor(private readonly  productService: ProductService) { }
+	constructor(private readonly productService: ProductService) { }
 
 	@Post('create')
 	async create(@Body() dto: CreateProductDto) {
-		this.productService.create(dto)
+		// TODO: add check for already created product!!!
+		return this.productService.create(dto)
 	}
 
 	@Get(':id')
 	async get(@Param('id') id: string) {
 		const product = await this.productService.findById(id);
-		if (!product) { 
+		if (!product) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR)
 		}
 		return product
@@ -25,14 +26,14 @@ export class ProductController {
 
 	@Delete(':id')
 	async delete(@Param('id') id: string) {
-		const deletedProduct = await this.productService.findById(id);
+		const deletedProduct = await this.productService.deleteById(id);
 		if (!deletedProduct) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR)
 		}
 	}
 
 	@Patch(':id')
-	async patch(@Param('id') id: string, dto: ProductModel) {
+	async patch(@Param('id') id: string, @Body() dto: ProductModel) {
 		const updatedProduct = await this.productService.updateById(id, dto);
 		if (!updatedProduct) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR)
@@ -44,6 +45,6 @@ export class ProductController {
 	@HttpCode(200)
 	@Post('find')
 	async find(@Body() dto: FindProductDto) {
-		this.productService.findWithReview(dto)
+		return this.productService.findWithReview(dto)
 	}
 }
