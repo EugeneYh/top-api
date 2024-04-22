@@ -4,7 +4,8 @@
 /build
 /mongo-data
 /mongo-data/diagnostic.data/metrics.interim
-mongo-data/WiredTiger.turtle
+/mongo-data/WiredTiger.turtle
+
 
 # Logs
 logs
@@ -20,6 +21,7 @@ lerna-debug.log*
 
 # Tests
 /coverage/e2e
+/coverage-e2e
 /.nyc_output
 
 # IDEs and editors
