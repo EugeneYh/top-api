@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ReviewModel } from './review.model/review.model';
+import { ReviewModel } from './review.model';
 import { DocumentType, ModelType } from '@typegoose/typegoose/lib/types';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { Types } from 'mongoose';
@@ -27,4 +27,3 @@ export class ReviewService {
 		return this.reviewModel.deleteMany({ productId: objId }).exec()
 	}
 }
- 
