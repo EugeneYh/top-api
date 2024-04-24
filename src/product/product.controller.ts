@@ -1,6 +1,6 @@
 import { FindProductDto } from './dto/find-product.dto';
 import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Patch, Post, UsePipes, ValidationPipe } from '@nestjs/common';
-import { ProductModel } from './product.model/product.model';
+import { ProductModel } from './product.model';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductService } from './product.service';
 import { PRODUCT_NOT_FOUND_ERROR } from './product.constants';

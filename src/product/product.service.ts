@@ -1,7 +1,7 @@
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { InjectModel } from '@m8a/nestjs-typegoose';
 import { Injectable } from '@nestjs/common';
-import { ProductModel } from './product.model/product.model';
+import { ProductModel } from './product.model';
 import { CreateProductDto } from './dto/create-product.dto';
 import { FindProductDto } from './dto/find-product.dto';
 import { ReviewModel } from 'src/review/review.model';
@@ -63,7 +63,7 @@ export class ProductService {
 								return reviews
 							}`,
 							args: ['$reviews'],
-                            lang: 'js'
+							lang: 'js'
 						}
 					}
 				}
